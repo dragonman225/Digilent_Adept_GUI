@@ -1,6 +1,9 @@
 # Digilent Adept GUI for Linux
 
 A small Electron app that helps people program Digilent FPGA board with simple clicks.
+
+![screenshot](https://github.com/dragonman225/Digilent_Adept_GUI/blob/master/assets/sc01.png)
+
 ## Check Before Start :
 Make sure Digilent Adept2 runtime and Digilent Adept2 utilities are installed.
 
