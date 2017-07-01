@@ -11,6 +11,10 @@ Clone the repo.
 ```
 git clone https://github.com/dragonman225/Digilent_Adept_GUI
 ```
+Go into the app folder.
+```
+cd Digilent_Adept_GUI
+```
 Install dependencies.
 ```
 npm install
