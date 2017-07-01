@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="assets/normalize.css" rel="stylesheet">
+        <link href="node_modules/milligram/dist/milligram.min.css" rel="stylesheet">
+        <link href="assets/style.css" rel="stylesheet">
+        <script src="./window.js"></script>
+        <title>Digilent Adept GUI</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="spacer"></div>
+            <h2>Digilent Adept GUI</h2>
+            <h5>Program FPGA on Linux with simple clicks!</h5>
+            <button class="button button-outline" onclick="discover()">Discover</button>
+            <button class="button button-outline" onclick="init()">Init Nexys3</button>
+            <button class="button button-outline" id="myFile" onclick="setPath()">ChooseFile</button>
+            <button class="button button-outline button-danger" id="progBtn" onclick="prog(this.value)">Program</button>
+            <p id="filePath"></p>
+            <pre><code id="console-output"></code></pre>
+            <p id="status"></p>
+        </div>
+        <script>
+            // GLUE to the screen
+            const electron = require('electron');
+            function getOutput() { return document.getElementById("console-output");  };
+            function getStatus() { return document.getElementById("status");  };
+            function setPath() {
+                var path = electron.remote.dialog.showOpenDialog({
+                    filters: [
+                        { name: 'Binary Files', extensions: ['bit'] }
+                    ]
+                })[0];
+                document.getElementById("progBtn").value = path;
+                document.getElementById("filePath").innerHTML = path;
+            };
+            // End of GLUE
+        </script>
+    </body>
+    <footer>
+        <div class="container">
+            <p>
+                Using node <script>document.write(process.versions.node)</script>,
+                Chrome <script>document.write(process.versions.chrome)</script>,
+                and Electron <script>document.write(process.versions.electron)</script>.
+            </p>
+        </div>
+    </footer>
+</html> 
