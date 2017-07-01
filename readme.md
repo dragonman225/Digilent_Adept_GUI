@@ -9,7 +9,7 @@ Check by typing djtgcfg in terminal.
 
 Clone the repo.
 ```
-git clone
+git clone https://github.com/dragonman225/Digilent_Adept_GUI
 ```
 Install dependencies.
 ```
